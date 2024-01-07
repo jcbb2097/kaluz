@@ -3,7 +3,7 @@ session_start();
 include_once('../../../WEB-INF/Classes/Catalogo.class.php');
 $catalogo = new Catalogo();
 $nombreUsuario = "";
-$idUsuario = "1";
+/* $idUsuario = "1"; */
 if (isset($_POST['Id_actividad']) && $_POST['Id_actividad'] != "") {
     $Id_actividad = $_POST["Id_actividad"];
     $tipo = $_POST["tipo"];
@@ -95,19 +95,18 @@ if (isset($_POST['Id_actividad']) && $_POST['Id_actividad'] != "") {
             echo '<td>' . $row['area'] . '</td>';
             echo '<td>' . $row['fecha'] . '</td>';
             $anadido = "";
-            if($Nivel == 3){ //en caso de ser check de actividad o global para diferenciarlo
-              $anadido = "&check_global=".$Id_check;
+            if ($Nivel == 3) { //en caso de ser check de actividad o global para diferenciarlo
+                $anadido = "&check_global=" . $Id_check;
             }
-            $ruta_edita = "../ArchivosEntregables/Alta_entregable_2.php?accion=editar2&id=" . $id_archivo . "&tipoPerfil=1&nombreUsuario=" . $nombreUsuario . "&idUsuario=" . $idUsuario . "&regreso=2&plan=2$anadido";
-            $editar = "onclick='edita($idUsuario,13,\"$ruta_edita\")'";
-            $eliminar  ="";
-            if ($Id_usuario == 1064 || $Id_usuario == 5 || $Id_usuario == 1 || $Id_usuario == 1145) {
-                $eliminar = "onclick='elimina($idUsuario,13,$id_archivo);'";
-            }
+            $ruta_edita = "../ArchivosEntregables/Alta_entregable_2.php?accion=editar2&id=" . $id_archivo . "&tipoPerfil=1&nombreUsuario=" . $nombreUsuario . "&idUsuario=" . $Id_usuario . "&regreso=2&plan=2$anadido";
+            $editar = "onclick='edita($Id_usuario,13,\"$ruta_edita\")'";
+            $eliminar  = "";
+            $eliminar = "onclick='elimina($Id_usuario,13,$id_archivo);'";
+
             echo '<td>';
-            if($eliminar != ""){
-              echo '<a style="cursor:pointer;left: 6px;position: relative;color: purple;" ' . $eliminar . '><span><i data-toggle="tooltip" data-placement="bottom" data-original-title="Borrar evidencia" class="fas fa-trash-alt"></i></span></a>';
-            }
+
+            echo '<a style="cursor:pointer;left: 6px;position: relative;color: purple;" ' . $eliminar . '><span><i data-toggle="tooltip" data-placement="bottom" data-original-title="Borrar evidencia" class="fas fa-trash-alt"></i></span></a>';
+
             echo '<a style="cursor:pointer;left: 12px;position: relative;color: purple;" ' . $editar . '><span><i data-toggle="tooltip" data-placement="bottom" data-original-title="Editar evidencia" class="fas fa-pen"></i></span></a>';
             echo '</td>';
             echo '</tr>';

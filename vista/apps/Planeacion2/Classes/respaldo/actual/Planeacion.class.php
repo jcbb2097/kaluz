@@ -204,6 +204,10 @@ class Planeacion
         return $avance;
     }
     /*----------------------------------------------------------------------------------------------------*/
+    /**
+     * ?metodo para obtener el avance de la actividad o meta
+     * 
+     */
     public function avance($IdActividad, $periodo, $idcategoria)
     {
         $avance = 0;
@@ -217,6 +221,8 @@ class Planeacion
         }
         return $avance;
     }
+
+
     public function get_categorias($idcategoria, $tipo, $anio)
     {
         $ids = array();
