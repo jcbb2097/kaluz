@@ -3,7 +3,6 @@ include_once("../../Classes/Catalogo.class.php");
 
 $catalogo = new Catalogo();
 
-
 if (isset($_POST['categoria']) && $_POST['categoria'] != "") {
     //aqui hacemos la consulta a la BD para obtener las categorias
     $Eje = $_POST['ideje'];
@@ -49,11 +48,11 @@ FROM
     $Periodo = $_POST['Periodo'];
     $categoria = $_POST['cate'];
 
-    $consulta_actividad = "SELECT a.*, b.Numeracion, b.Orden
-        FROM c_actividad a 
-        JOIN k_actividad_categoria b ON b.IdActividad=a.IdActividad
-        WHERE  b.IdCategoria=$categoria AND a.IdNivelActividad=1
-        ORDER BY b.Orden";
+    $consulta_actividad = "SELECT a.IdActividad,CONCAT( aa.Numeracion, a.Nombre ) AS Nombre 
+        FROM c_actividad a
+	    INNER JOIN k_actividad_categoria aa ON aa.IdActividad = a.IdActividad 
+        WHERE a.IdEje = $Eje AND a.IdTipoActividad = $Tipo AND aa.IdPeriodo = $Periodo AND aa.IdCategoria = $categoria AND a.IdNivelActividad = 1 
+        ORDER BY aa.Orden";
     $s = "";
     $resultado = $catalogo->obtenerLista($consulta_actividad);
     echo '<option value="">Seleccione</option>';
@@ -65,12 +64,10 @@ FROM
     $actividad = $_POST['Actividad'];
     $Periodo = $_POST['Periodo'];
     $categoria = $_POST['cate'];
-    $consulta_actividad = "SELECT a.* , b.Numeracion, b.Orden
-    FROM c_actividad a 
-    JOIN k_actividad_categoria b ON b.IdActividad=a.IdActividad
-    WHERE  b.IdCategoria=$categoria AND a.IdNivelActividad=2
-    AND a.IdActividadSuperior =$actividad
-    ORDER BY b.Orden";
+    $consulta_actividad = "SELECT a.IdActividad,CONCAT( aa.Numeracion, a.Nombre ) AS Nombre 
+        FROM c_actividad a INNER JOIN k_actividad_categoria aa ON aa.IdActividad = a.IdActividad 
+        WHERE aa.IdPeriodo = $Periodo AND a.IdActividadSuperior=$actividad AND aa.IdCategoria=$categoria
+        ORDER BY aa.Orden";
     //echo $consulta_actividad;
     $resul = $catalogo->obtenerLista($consulta_actividad);
     if (mysqli_num_rows($resul) > 0) {
@@ -86,17 +83,9 @@ FROM
     $actividad = $_POST['Actividad'];
     $Periodo = $_POST['Periodo'];
     $categoria = $_POST['cate'];
-    $subcategoria = $_POST['subcate'];
-    if ($subcategoria == 0) {
-        $consulta_actividad = "SELECT ch.IdCheckList,ch.Nombre FROM c_checkList ch
+    $consulta_actividad = "SELECT ch.IdCheckList,ch.Nombre FROM c_checkList ch
 	    INNER JOIN k_checklist_actividad che ON che.IdCheckList = ch.IdCheckList
         WHERE che.IdActividad = $actividad AND che.Id_Periodo = $Periodo AND ch.Nivel = 1 AND che.IdCategoria=$categoria ORDER BY che.Orden";
-    } else {
-        $consulta_actividad = "SELECT ch.IdCheckList,ch.Nombre FROM c_checkList ch
-	    INNER JOIN k_checklist_actividad che ON che.IdCheckList = ch.IdCheckList
-        WHERE che.IdActividad = $actividad AND che.Id_Periodo = $Periodo AND ch.Nivel = 1 AND che.IdCategoria=$subcategoria ORDER BY che.Orden";
-    }
-
 
     $resultado = $catalogo->obtenerLista($consulta_actividad);
     echo '<option value="NULL">Seleccione</option>';
@@ -108,11 +97,12 @@ FROM
     $check = $_POST['checklist'];
     $Periodo = $_POST['Periodo'];
     $categoria = $_POST['cate'];
-    $consulta_subcheck = "SELECT c.idCheckList , c.Nombre  , c.Tipo,a.IdActividad, a.IdCategoria, c.IdCheckListPadre  
-        FROM c_checkList  c 
-        JOIN k_checklist_actividad a  ON c.idCheckList = a.IdCheckList 
-        WHERE c.IdCheckListPadre=  $check
-        ORDER BY c.Nombre";
+    $consulta_subcheck = "SELECT ch.IdCheckList,CASE
+        WHEN che.Nombre_alterno != '' THEN
+        che.Nombre_alterno ELSE ch.Nombre 
+        END AS Nombre FROM
+	    c_checkList ch INNER JOIN k_checklist_actividad che ON che.IdCheckList = ch.IdCheckList
+        WHERE che.IdActividad = 16994 AND che.Id_Periodo = $Periodo AND ch.Nivel = 2 AND ch.IdCheckListPadre = $check AND che.IdCategoria=$categoria ORDER BY che.Orden";
     $resultado = $catalogo->obtenerLista($consulta_subcheck);
     //echo $consulta_subcheck;
     if (mysqli_num_rows($resultado) > 0) {

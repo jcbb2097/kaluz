@@ -113,7 +113,7 @@ class actividades
         } else {
             $total_avance = 1;
             $consulta_procesos = "SELECT ka.Proceso FROM k_checklist_actividad ka WHERE ka.Id_Periodo=$periodo AND ka.IdCheckList=$Id_check AND ka.IdActividad=$Id_actividad";
-
+            //echo $consulta_procesos;
             $resultado = $catalogo->obtenerLista($consulta_procesos);
             while ($row = mysqli_fetch_array($resultado)) {
                 $total_avance = $total_avance += $row['Proceso'];
@@ -147,13 +147,13 @@ class actividades
         $avance_final = $avance / $avance_total;
         $consulta = "UPDATE k_checklist_actividad as ch set ch.Avance=$avance_final WHERE ch.Id_Periodo=$periodo AND ch.IdActividad=$Id_actividad AND ch.IdCheckList=$Id_check;";
         $query = $catalogo->ejecutaConsultaActualizacion($consulta, 'k_checklist_actividad', 'IdActividad = ' . $this->id_actividad);
-        //echo "<br><br>$consulta<br><br>";
+        // echo "<br><br>$consulta<br><br>";
         if ($query == 1) {
             return true;
         }
         return false;
     }
-    public function Eliminar_check_avance($id_actividad, $id_check, $tipo_entregable, $periodo, $archivo)
+    public function Eliminar_check_avance($id_actividad, $id_check, $tipo_entregable, $periodo, $archivo, $id_categoria)
     {
         $Inicial = "";
         $Final = "";
@@ -164,10 +164,12 @@ class actividades
         if ($archivo > 0) {
             $Archivo_cambia = $archivo;
         }
+
         $consulta = "SELECT ka.Inicial,ka.Proceso,ka.Final,Avance FROM k_checklist_actividad ka
-        WHERE ka.Id_Periodo=$periodo AND ka.IdCheckList=$id_check AND ka.IdActividad=$id_actividad";
-        $resultado = $catalogo->obtenerLista($consulta);
+        WHERE ka.Id_Periodo=$periodo AND ka.IdCheckList=$id_check AND ka.IdActividad=$id_actividad AND ka.IdCategoria=$id_categoria";
         //echo $consulta;
+        $resultado = $catalogo->obtenerLista($consulta);
+
         while ($row = mysqli_fetch_array($resultado)) {
             $Inicial = $row['Inicial'];
             $proceso = $row['Proceso'];
@@ -200,7 +202,8 @@ class actividades
                 $Avance = 0;
             }
         }
-        $consulta = "UPDATE k_checklist_actividad as ch set ch.Avance=$Avance ,ch.Inicial=$Inicial,ch.Proceso=$proceso,ch.Final=$Final,Archivo=$Archivo_cambia WHERE ch.Id_Periodo=$periodo AND ch.IdActividad=$id_actividad AND ch.IdCheckList=$id_check;";
+        $consulta = "UPDATE k_checklist_actividad as ch set ch.Avance=$Avance ,ch.Inicial=$Inicial,ch.Proceso=$proceso,ch.Final=$Final,Archivo=$Archivo_cambia WHERE ch.Id_Periodo=$periodo AND ch.IdActividad=$id_actividad AND ch.IdCheckList=$id_check AND ch.IdCategoria=$id_categoria";
+        //echo $consulta;
         $query = $catalogo->ejecutaConsultaActualizacion($consulta, 'k_checklist_actividad', 'IdActividad = ' . $this->id_actividad);
         if ($query == 1) {
             return true;
@@ -214,6 +217,7 @@ class actividades
         $consulta = "SELECT d.id_documento
        FROM c_documento d INNER JOIN k_archivoactividad ka ON ka.id_archivo = d.id_documento
        WHERE d.id_documento = $id_doc  AND ka.id_actividad=$id_actividad";
+        //echo $consulta;
         $resultado = $catalogo->obtenerLista($consulta);
         while ($row = mysqli_fetch_array($resultado)) {
             $existe = $row['id_documento'];
@@ -221,24 +225,26 @@ class actividades
         return $existe;
     }
 
-    public function actualiza_porcentaje($tipo_entregable, $periodo, $check_global, $id_actividad,  $idcategoria){
-      $Avance = 0;
-      if ($tipo_entregable == 9) {
-          $Avance = $Avance = 25;
-      }
-      if ($tipo_entregable == 14) {
-          $Avance = $Avance = 66;
-      }
-      if ($tipo_entregable == 10) {
-          $Avance = $Avance = 100;
-      }
-      $catalogo = new Catalogo();
-      $consulta = "UPDATE k_checklist_actividad as ch set ch.Avance=$Avance  WHERE ch.Id_Periodo=$periodo AND ch.IdActividad=$id_actividad AND ch.IdCheckList=$check_global and ch.IdCategoria = $idcategoria;";
-      $query = $catalogo->ejecutaConsultaActualizacion($consulta, 'k_checklist_actividad', "ch.Id_Periodo=$periodo AND ch.IdActividad=$id_actividad AND ch.IdCheckList=$check_global and ch.IdCategoria = $idcategoria");
-      if ($query == 1) {
-          return true;
-      }
-      return false;
+    public function actualiza_porcentaje($tipo_entregable, $periodo, $check_global, $id_actividad,  $idcategoria)
+    {
+        $Avance = 0;
+        if ($tipo_entregable == 9) {
+            $Avance = $Avance = 25;
+        }
+        if ($tipo_entregable == 14) {
+            $Avance = $Avance = 66;
+        }
+        if ($tipo_entregable == 10) {
+            $Avance = $Avance = 100;
+        }
+        $catalogo = new Catalogo();
+        $consulta = "UPDATE k_checklist_actividad as ch set ch.Avance=$Avance  WHERE ch.Id_Periodo=$periodo AND ch.IdActividad=$id_actividad AND ch.IdCheckList=$check_global and ch.IdCategoria = $idcategoria;";
+        //echo$consulta;
+        $query = $catalogo->ejecutaConsultaActualizacion($consulta, 'k_checklist_actividad', "ch.Id_Periodo=$periodo AND ch.IdActividad=$id_actividad AND ch.IdCheckList=$check_global and ch.IdCategoria = $idcategoria");
+        if ($query == 1) {
+            return true;
+        }
+        return false;
     }
 
     function getId_archivoactividad()

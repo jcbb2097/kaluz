@@ -26,13 +26,10 @@ if (isset($_POST['Accion']) && $_POST['Accion'] != "") {
             $consulta = "SELECT
             psm.Alta
             FROM
-                k_perfil_submenu psm
-                INNER JOIN c_submenu sbm ON sbm.Id_submenu = psm.Id_submenu
-                INNER JOIN c_perfil p ON p.idPerfil = psm.Id_perfil
-                INNER JOIN c_usuario u ON u.IdPerfil = p.idPerfil 
-            WHERE
-                u.IdUsuario = $Id_user
-                AND sbm.Id_submenu = $Id_submenu";
+            k_perfil_submenu psm
+            INNER JOIN c_submenu sub on sub.Id_submenu=psm.Id_submenu
+            INNER JOIN c_usuario u on u.IdUsuario=psm.Id_usuario
+            WHERE u.IdUsuario=$Id_user AND sub.Id_submenu=$Id_submenu";
             $resulaño = $catalogo->obtenerLista($consulta);
             while ($row = mysqli_fetch_array($resulaño)) {
                 $resultado = $row['Alta'];
@@ -43,14 +40,10 @@ if (isset($_POST['Accion']) && $_POST['Accion'] != "") {
             $consulta = "SELECT
             psm.Cambio
             FROM
-                k_perfil_submenu psm
-                INNER JOIN c_submenu sbm ON sbm.Id_submenu = psm.Id_submenu
-                INNER JOIN c_perfil p ON p.idPerfil = psm.Id_perfil
-                INNER JOIN c_usuario u ON u.IdPerfil = p.idPerfil 
-            WHERE
-                u.IdUsuario = $Id_user
-                AND sbm.Id_submenu = $Id_submenu
-                ";
+            k_perfil_submenu psm
+            INNER JOIN c_submenu sub on sub.Id_submenu=psm.Id_submenu
+            INNER JOIN c_usuario u on u.IdUsuario=psm.Id_usuario
+            WHERE u.IdUsuario=$Id_user AND sub.Id_submenu=$Id_submenu";
             $resulaño = $catalogo->obtenerLista($consulta);
             while ($row = mysqli_fetch_array($resulaño)) {
                 $resultado = $row['Cambio'];
@@ -60,15 +53,11 @@ if (isset($_POST['Accion']) && $_POST['Accion'] != "") {
         case 'Eliminar':
             $consulta = "SELECT
             psm.Baja
-            FROM
-                k_perfil_submenu psm
-                INNER JOIN c_submenu sbm ON sbm.Id_submenu = psm.Id_submenu
-                INNER JOIN c_perfil p ON p.idPerfil = psm.Id_perfil
-                INNER JOIN c_usuario u ON u.IdPerfil = p.idPerfil 
-            WHERE
-                u.IdUsuario = $Id_user
-                AND sbm.Id_submenu = $Id_submenu
-                ";
+        FROM
+            k_perfil_submenu psm
+            INNER JOIN c_submenu sub on sub.Id_submenu=psm.Id_submenu
+            INNER JOIN c_usuario u on u.IdUsuario=psm.Id_usuario
+            WHERE u.IdUsuario=$Id_user AND sub.Id_submenu=$Id_submenu";
             $resulaño = $catalogo->obtenerLista($consulta);
             while ($row = mysqli_fetch_array($resulaño)) {
                 $resultado = $row['Baja'];

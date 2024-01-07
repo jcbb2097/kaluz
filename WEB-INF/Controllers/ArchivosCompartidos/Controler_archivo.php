@@ -35,6 +35,8 @@ $check_list = "";
 $sub_check_list = "";
 $id_check = "";
 $id_actividad = "";
+$check_global = "";
+
 
 if (isset($_POST['accion']) && $_POST['accion'] != "") {
 
@@ -57,7 +59,7 @@ if (isset($_POST['accion']) && $_POST['accion'] != "") {
             if (isset($parametros['subCheck']) && $parametros['subCheck'] != "" && $parametros['subCheck'] > 0) {
                 $sub_check_list = $parametros['subCheck'];
             }
-            if (isset($_POST['check_global']) && $_POST['check_global'] != "" ) {
+            if (isset($_POST['check_global']) && $_POST['check_global'] != "") {
                 $check_global = $_POST['check_global'];
             }
             //aqui asignamos si es check o subcheck para guardar en c_documento
@@ -66,11 +68,9 @@ if (isset($_POST['accion']) && $_POST['accion'] != "") {
             } else {
                 $id_check = $parametros['Check'];
             }
-            if($check_global > 0 ){
-              $id_check = $check_global;
+            if ($check_global > 0) {
+                $id_check = $check_global;
             }
-
-
 
             //aqui asignamos si es actividad globlal o general para la validacion de abajo
             if (isset($parametros['ActvGlobal']) && $parametros['ActvGlobal'] != "" && $parametros['ActvGlobal'] > 0) {
@@ -204,15 +204,15 @@ if (isset($_POST['accion']) && $_POST['accion'] != "") {
                     if ($parametros['ano'] == 9 && $parametros['Eje'] == 7 || $parametros['acme'] = 2 && $parametros['ano'] == 9) {
                         $obj4->actualizarAvance2022(14, $idcategoria, $id_actividad, $id_check, $parametros['categoria']);
                     }
-                    if ( $check_list == "" && $sub_check_list == "") {
+                    if ($check_list == "" && $sub_check_list == "") {
                         $obj5->Entregable($IDIndicador, $id_actividad, $idcategoria, $parametros['ano']);
                     }
 
                     if (isset($_POST['check_global']) && $_POST['check_global'] != "" && $_POST['check_global'] != 0) {
-                        $check_global = $_POST['check_global'] ;
+                        $check_global = $_POST['check_global'];
 
                         $obj2->actualiza_porcentaje($tipo_entregable, $parametros['ano'], $check_global, $id_actividad,  $idcategoria);
-                      }
+                    }
                 } else {
                     echo 'Error: No se ha podido guardar el archivo';
                 }
@@ -420,12 +420,19 @@ if (isset($_POST['accion']) && $_POST['accion'] != "") {
             if (isset($parametros['subCheck']) && $parametros['subCheck'] != "" && $parametros['subCheck'] > 0) {
                 $sub_check_list = $parametros['subCheck'];
             }
-            //aqui asignamos si es check o subcheck para guardar en c_documento
-            if ($sub_check_list > 0 && $check_list > 0) {
-                $id_check = $parametros['subCheck'];
-            } else {
-                $id_check = $parametros['Check'];
+            if (isset($_POST['check_global']) && $_POST['check_global'] != "" && $_POST['check_global'] > 0) {
+                $check_global = $_POST['check_global'];
             }
+
+            //aqui asignamos si es check o subcheck para guardar en c_documento
+            if ($check_list > 0 && $check_global == '' && $sub_check_list == "") {
+                $id_check = $check_list;
+            } elseif ($check_list > 0 && $check_global == '' && $sub_check_list > 0) {
+                $id_check = $sub_check_list;
+            } else {
+                $id_check = $check_global;
+            }
+
             //aqui asignamos si es actividad globlal o general para la validacion de abajo
             if (isset($parametros['ActvGlobal']) && $parametros['ActvGlobal'] != "" && $parametros['ActvGlobal'] > 0) {
                 $Global = $parametros['ActvGlobal'];
@@ -510,9 +517,7 @@ if (isset($_POST['accion']) && $_POST['accion'] != "") {
                         echo 'Éxito: El Archivo de normatividad ha sido editado';
                     }
                     $obj4->Regresar_entregable($tipo_entregable, $id_check, $id_actividad, $parametros['ano'], $tipo_entregable_last, $idcategoria);
-                    if ($parametros['ano'] == 9) {
-                        $obj4->actualizarAvance2022(14, $idcategoria, $id_actividad, $id_check, $parametros['categoria']);
-                    }
+                    //$obj4->actualizarAvance2022($parametros['ano'], $idcategoria, $id_actividad, $id_check, $parametros['categoria']);
                     $obj2->setId_archivo($IDIndicador);
                     $obj2->setId_proyecto($parametros['Eje']);
                     if (isset($parametros['ActvGlobal']) && $parametros['ActvGlobal'] != "") {
@@ -592,8 +597,10 @@ if (isset($_POST['accion']) && $_POST['accion'] != "") {
                     $obj->setId_documento($IDIndicador);
                     $obj->eliminarAcuerdo();
                     $obj->eliminardetalle_doc();
-                    if ($Id_check != "" && $Id_check != 0)
+                    if ($Id_check != "" && $Id_check != 0) {
                         $obj2->Eliminar_check_avance($id_actividad, $Id_check, $tipo_entregable, $periodo, $archivo, $idcategoria);
+                    }
+
                     echo 'Éxito: Se ha eliminado el archivo';
                 } else {
                     echo 'Error: No se ha podido eliminar el archivo';

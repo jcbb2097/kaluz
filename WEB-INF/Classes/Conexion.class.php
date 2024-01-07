@@ -3,10 +3,19 @@ class Conexion {
     private $db;
     var $empresa;
 
+    /* private $MYSQL_HOST = "184.168.23.252";
+    private $MYSQL_DB = "adminsie_pruebas";
+    private $MYSQL_LOGIN = "adminsie_prueba";
+    private $MYSQL_PASS = 'SC]wW5^3WdwS'; */
+	
     private $MYSQL_HOST = "localhost";
-    private $MYSQL_DB = "adminsie_siekaluz";
-    private $MYSQL_LOGIN = "adminsie_adminsie";
-    private $MYSQL_PASS = 'sieDB$2023_';
+    private $MYSQL_DB = "sie";
+    private $MYSQL_LOGIN = "root";
+    private $MYSQL_PASS = '';
+	
+	
+	
+	
 	
 //
     public function Conectar() {
