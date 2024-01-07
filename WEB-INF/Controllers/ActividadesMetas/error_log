@@ -1,0 +1,18 @@
+[30-Mar-2022 19:49:29 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ActividadesMetas::setnombreentregable() in /home/caomi8administro/public_html/siekaluz.com/sie/WEB-INF/Controllers/ActividadesMetas/Controller_actividadesMetas.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/caomi8administro/public_html/siekaluz.com/sie/WEB-INF/Controllers/ActividadesMetas/Controller_actividadesMetas.php on line 59
+[30-Mar-2022 19:49:59 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ActividadesMetas::setnombreentregable() in /home/caomi8administro/public_html/siekaluz.com/sie/WEB-INF/Controllers/ActividadesMetas/Controller_actividadesMetas.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/caomi8administro/public_html/siekaluz.com/sie/WEB-INF/Controllers/ActividadesMetas/Controller_actividadesMetas.php on line 59
+[30-Mar-2022 20:02:28 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method ActividadesMetas::setnombreentregable() in /home/caomi8administro/public_html/siekaluz.com/sie/WEB-INF/Controllers/ActividadesMetas/Controller_actividadesMetas.php:59
+Stack trace:
+#0 {main}
+  thrown in /home/caomi8administro/public_html/siekaluz.com/sie/WEB-INF/Controllers/ActividadesMetas/Controller_actividadesMetas.php on line 59
+[30-Mar-2022 20:15:57 UTC] PHP Notice:  Undefined index: tieneanios in /home/caomi8administro/public_html/siekaluz.com/sie/WEB-INF/Controllers/ActividadesMetas/Controller_actividadesMetas.php on line 58
+[30-Mar-2022 20:15:57 UTC] PHP Notice:  Undefined index: aniovisible in /home/caomi8administro/public_html/siekaluz.com/sie/WEB-INF/Controllers/ActividadesMetas/Controller_actividadesMetas.php on line 74
+[30-Mar-2022 20:15:57 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/caomi8administro/public_html/siekaluz.com/sie/WEB-INF/Controllers/ActividadesMetas/Controller_actividadesMetas.php on line 75
+[30-Mar-2022 23:10:48 UTC] PHP Notice:  Undefined index: tieneanios in /home/caomi8administro/public_html/siekaluz.com/sie/WEB-INF/Controllers/ActividadesMetas/Controller_actividadesMetas.php on line 58
+[30-Mar-2022 23:10:48 UTC] PHP Notice:  Undefined index: aniovisible in /home/caomi8administro/public_html/siekaluz.com/sie/WEB-INF/Controllers/ActividadesMetas/Controller_actividadesMetas.php on line 74
+[30-Mar-2022 23:10:48 UTC] PHP Warning:  count(): Parameter must be an array or an object that implements Countable in /home/caomi8administro/public_html/siekaluz.com/sie/WEB-INF/Controllers/ActividadesMetas/Controller_actividadesMetas.php on line 75

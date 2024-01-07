@@ -1,0 +1,280 @@
+<?php
+include_once "../WEB-INF/Classes/Verifica.class.php";
+$verifica      = new Verifica();
+$tipoPerfil    = $_GET["tipoPerfil"];
+$nombreUsuario = $_GET["nombreUsuario"];
+$idUsuario     = $_GET["idUsuario"];
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<title>::.APLICACIONES.::</title>
+	<link rel="stylesheet" type="text/css" href="../resources/font/index.css"/>
+	<link rel="stylesheet" type="text/css" href="../resources/css/aplicaciones.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+			a:hover {
+				cursor: pointer;
+			}
+		</style>
+</head>
+<body style='overflow-x: hidden; overflow-y: hidden;'>
+<div class="well2 ">Aplicaciones</div>
+<div class="well2 wr"><a href="javascript:parent.location.reload();"><img class="imgRegresar" src="../resources/icon/regresarBlanco.png" /></a></div>
+<!--aplicaciones eje1-->
+<div style="top: 64px;left: 1px;"   class="aplE">
+<!--<a href='apps/Seguridad/seguridad.php?menu_seguridad=Indicadores&id_t=Indicadores&nombreUsuario=< ?php echo $nombreUsuario; ?>&idUsuario=< ?php echo $idUsuario; ?>&perfil=1&tipoPerfil=< ?php echo $tipoPerfil; ?>'>Seguridad</a>-->
+<a href='apps/SeguridadApp/vista/index.php?nombreUsuario=<?php echo $nombreUsuario; ?>&idUsuario=<?php echo $idUsuario; ?>&perfil=1&tipoPerfil=<?php echo $tipoPerfil; ?>'>Seguridad</a>
+
+</div>
+<div style="top: 64px;left: 182px;" class="aplE2"></div>
+<div style="top: 64px;left: 363px;" class="aplE2"></div>
+<div style="top: 64px;left: 544px;" class="aplE2"></div>
+<div style="top: 64px;left: 725px;" class="aplE2"></div>
+<!--aplicaciones eje2-->
+<div style="top: 117px;left: 1px;"   class="aplE">
+<?php if($idUsuario == 1171 || $idUsuario == 1143 || $idUsuario == 5 || $idUsuario == 1145 || $idUsuario == 1168 ){?>
+<a href='apps/Planeacion2/Index.php?nombreUsuario=<?php echo $nombreUsuario; ?>&idUsuario=<?php echo $idUsuario; ?>&perfil=1&tipoPerfil=<?php echo $tipoPerfil; ?>&periodo=11'>Planeación y avance 2</a>
+<?php }?>
+</div>
+<div style="top: 117px;left: 182px;" class="aplE">
+	<!-- <a onclick="ejeColor(2,'170px');Verifica(<?php echo $idUsuario; ?>,4)">Acuerdos Escritos</a><br> -->
+	<a onclick="ejeColor(2,'170px');Verifica(<?php echo $idUsuario; ?>,4)">Acuerdos Firmados</a><br>
+	<a onclick="ejeColor(2,'170px');Verifica(<?php echo $idUsuario; ?>,3)">Planeación y avance </a>
+</div>
+<div style="top: 117px;left: 363px;" class="aplE">
+	<!--a href="apps/ActividadesMetas/lista_actividadesMetas.php?nombreUsuario=<?php echo $nombreUsuario; ?>">Actividades y Metas</a><br-->
+	<a onclick="ejeColor(2,'170px');Verifica(<?php echo $idUsuario; ?>, 7)">Actividades y Metas</a><br>
+	<a onclick="ejeColor(2,'170px');Verifica(<?php echo $idUsuario; ?>,38)">Categorías y subcategorías</a>
+</div>
+<div style="top: 117px;left: 544px;" class="aplE"></div>
+<div style="top: 117px;left: 725px;" class="aplE"><!--a href="apps/ArchivosEntregables/lista_archivo.php">Archivos Entregables</a><br>
+												  	<a href="apps/ArchivosCompartidos/lista_archivo.php">Archivos Compartidos</a-->
+												  	<a onclick="ejeColor(2,'170px');Verifica(<?php echo $idUsuario; ?>,8)">Archivos Entregables</a><br>
+													<a onclick="ejeColor(2,'170px');Verifica(<?php echo $idUsuario; ?>,9)">Archivos Compartidos</a></div>
+<!--aplicaciones eje3-->
+<div style="top: 170px;left: 1px;"   class="aplE">
+	<a href='https://museokaluz-apps.com/fijo/index.php'>Activo fijo</a>
+</div>
+<div style="top: 170px;left: 182px;" class="aplE2">
+
+</div>
+<div style="top: 170px;left: 363px;" class="aplE2"></div>
+<div style="top: 170px;left: 544px;" class="aplE2"></div>
+<div style="top: 170px;left: 725px;" class="aplE2"></div>
+<!--aplicaciones eje4-->
+<div style="top: 223px;left: 1px;"   class="aplE">
+
+<a href='apps/ContratoApp/vista/index.php?nombreUsuario=<?php echo $nombreUsuario; ?>&idUsuario=<?php echo $idUsuario; ?>&perfil=1&tipoPerfil=<?php echo $tipoPerfil; ?>'>Instrumentos jurídicos</a>
+<br>
+<a href='apps/SIEG2/siegkaluz/index.php?nombreUsuario=<?php echo $nombreUsuario; ?>&idusuario=<?php echo $idUsuario; ?>&perfil=1&tipoPerfil=<?php echo $tipoPerfil; ?>'>Ingresos y egresos</a>
+</div>
+<div style="top: 223px;left: 182px;" class="aplE">
+<a href='apps/Calculadora/vista/index.php?nombreUsuario=<?php echo $nombreUsuario; ?>&idUsuario=<?php echo $idUsuario; ?>&perfil=1&tipoPerfil=<?php echo $tipoPerfil; ?>'>Herramienta de cálculo</a>
+</div>
+<div style="top: 223px;left: 363px;" class="aplE"><!--a href="apps/Personas/lista_personas.php">Personas</a-->
+													<!--<a onclick="ejeColor(4,'275px');Verifica(< ?php echo $idUsuario; ?>,14)">Personas</a>-->
+
+<a href='apps/PersonaApp/vista/index.php?nombreUsuario=<?php echo $nombreUsuario; ?>&idUsuario=<?php echo $idUsuario; ?>&perfil=1&tipoPerfil=<?php echo $tipoPerfil; ?>'>Personas</a>
+
+</div>
+<div style="top: 223px;left: 544px;" class="aplE"></div>
+<div style="top: 223px;left: 725px;" class="aplE"><!--a href="apps/Institucion/Lista_institucion.php">Instituciones</a-->
+												<!--a onclick="ejeColor(4,'275px');Verifica(<?php echo $idUsuario; ?>,17)">Instituciones</a--></div>
+<!--aplicaciones eje5-->
+<div style="top: 276px;left: 1px;"   class="aplE2"></div>
+<div style="top: 276px; left: 182px" class="aplE2"></div>
+<div style="top: 276px;left: 363px;" class="aplE2"></div>
+<div style="top: 276px;left: 544px;" class="aplE2"></div>
+<div style="top: 276px;left: 725px;" class="aplE2"></div>
+<!--aplicaciones eje6-->
+<div style="top: 329px;left: 1px;" class="aplE">
+		<a onclick="ejeColor(6,'382px')" href="apps/Piezas/vista/principal.php?tipoPerfil=<?php echo $tipoPerfil; ?>&idUsuario=<?php echo $idUsuario; ?>&nombreUsuario=<?php echo $nombreUsuario; ?>&aplicacion=permanente">Colección Permanente</a>
+	</div>
+<div style="top: 329px;left: 182px;" class="aplE2"></div>
+<div style="top: 329px;left: 363px;" class="aplE2"></div>
+<div style="top: 329px;left: 544px;" class="aplE2"></div>
+<div style="top: 329px;left: 725px;" class="aplE2"></div>
+<!--aplicaciones eje7-->
+<div style="top: 382px;left: 1px;"   class="aplE"><!--a href="apps/Piezas/vista/principal.php?tipoPerfil=<?php echo $tipoPerfil; ?>&idUsuario=<?php echo $idUsuario; ?>&nombreUsuario=<?php echo $nombreUsuario; ?>">Piezas</a-->
+												<a onclick="ejeColor(7,'435px');Verifica(<?php echo $idUsuario; ?>,19)">Exposiciones Temporales</a></div>
+<div style="top: 382px;left: 182px;" class="aplE"><!--a href="apps/ExposicionTemporal/vista/index.php?tipoPerfil=<?php echo $tipoPerfil; ?>&idUsuario=<?php echo $idUsuario; ?>&nombreUsuario=<?php echo $nombreUsuario; ?>">Exposiciones temporales</a-->
+												<!--a onclick="ejeColor(7,'435px');Verifica(<?php echo $idUsuario; ?>,20)">Exposiciones temporales</a--></div>
+<div style="top: 382px;left: 363px;" class="aplE"></div>
+<div style="top: 382px;left: 544px;" class="aplE"></div>
+<div style="top: 382px;left: 725px;" class="aplE"></div>
+<!--aplicaciones eje8-->
+<div style="top: 435px;left: 1px;"   class="aplE">
+<!--<a href='apps/Opiniones/Opiniones.php?nombreUsuario=< ?php echo $nombreUsuario; ?>&idUsuario=< ?php echo $idUsuario; ?>&perfil=1&tipoPerfil=< ?php echo $tipoPerfil; ?>'>Opiniones</a>-->
+
+<?php // if($idUsuario == 1143 || $idUsuario == 1152){?>
+<a href='apps/OpinionApp/vista/index.php?nombreUsuario=<?php echo $nombreUsuario; ?>&idUsuario=<?php echo $idUsuario; ?>&perfil=1&tipoPerfil=<?php echo $tipoPerfil; ?>'>Opiniones</a>
+<?php //}?>
+</div>
+<div style="top: 435px;left: 182px;" class="aplE">
+<a href='apps/EncuestasApp/vista/index.php?nombreUsuario=<?php echo $nombreUsuario; ?>&idUsuario=<?php echo $idUsuario; ?>&perfil=1&tipoPerfil=<?php echo $tipoPerfil; ?>'>Encuestas</a>
+</div>
+<div style="top: 435px;left: 363px;" class="aplE2"></div>
+<div style="top: 435px;left: 544px;" class="aplE2"></div>
+<div style="top: 435px;left: 725px;" class="aplE2"></div>
+<!--aplicaciones eje9-->
+<div style="top: 488px;left: 1px;"   class="aplE"><!--a href="apps/NoticiasPortada/noticiasPortada.php?tipoPerfil=<?php echo $tipoPerfil; ?>&idUsuario=<?php echo $idUsuario; ?>&nombreUsuario=<?php echo $nombreUsuario; ?>">Noticias portada</a-->
+												<a onclick="ejeColor(9,'541px');Verifica(<?php echo $idUsuario; ?>,25)">Noticias portada</a></div>
+<div style="top: 488px;left: 182px;" class="aplE"><a href="apps/Noticias/vista.php?tipoPerfil=<?php echo $tipoPerfil; ?>&idUsuario=<?php echo $idUsuario; ?>&nombreUsuario=<?php echo $nombreUsuario; ?>">Noticias</a>
+												<!--<a onclick="ejeColor(9,'541px');Verifica(< ?php echo $idUsuario; ?>,26)">Noticias</a>-->
+</div>
+<div style="top: 488px;left: 363px;" class="aplE">
+<a href='https://app.sproutsocial.com/login?app_language=es-la' target='_blank'>Sprout Social</a>
+</div>
+<div style="top: 488px;left: 544px;" class="aplE"></div>
+<div style="top: 488px;left: 725px;" class="aplE"></div>
+<!--aplicaciones eje10-->
+<div style="top: 541px;left: 1px;"   class="aplE"><!--a href="apps/Publicaciones/lista_publicaciones.php?tipoPerfil=<?php echo $tipoPerfil; ?>&idUsuario=<?php echo $idUsuario; ?>&nombreUsuario=<?php echo urlencode($nombreUsuario); ?>">Publicaciones</a-->
+												<a onclick="ejeColor(10,'594px');Verifica(<?php echo $idUsuario; ?>,29)">Publicaciones</a></div>
+<div style="top: 541px;left: 182px;" class="aplE"></div>
+<div style="top: 541px;left: 363px;" class="aplE"></div>
+<div style="top: 541px;left: 544px;" class="aplE"></div>
+<div style="top: 541px;left: 725px;" class="aplE"></div>
+<!--aplicaciones eje11-->
+<div style="top: 594px;left: 1px;"   class="aplE2"></div>
+<div style="top: 594px;left: 182px;" class="aplE2"></div>
+<div style="top: 594px;left: 363px;" class="aplE2"></div>
+<div style="top: 594px;left: 544px;" class="aplE2"></div>
+<div style="top: 594px;left: 725px;" class="aplE2"></div>
+
+<!--aplicaciones Total-->
+<?php if ($tipoPerfil == 1) {?>
+	<div style="top: 647px;left: 1px;" class="aplE"><a href="adminSistema/controlUsuarios.php?tipoPerfil=<?php echo $tipoPerfil; ?>&idUsuario=<?php echo $idUsuario; ?>&nombreUsuario=<?php echo $nombreUsuario; ?>">Control de usuarios</a><br>
+													<a href="adminSistema/controlEjes.php?tipoPerfil=<?php echo $tipoPerfil; ?>&idUsuario=<?php echo $idUsuario; ?>&nombreUsuario=<?php echo $nombreUsuario; ?>">Ejes</a><br>
+													<a onclick="Verifica(<?php echo $idUsuario; ?>,37)">Permisos</a></div>
+	<div style="top: 647px;left: 182px;" class="aplE">
+		<a href="apps/Usuarios/indexF.php">Usuarios</a><br>
+		<a href="apps/parametros/lista_parametros.php">Parámetros</a>
+	</div>
+	<div style="top: 647px;left: 363px;" class="aplE2">
+			<a href="apps/entregablechk/vista.php">Asignar Checklist a Entregables</a><br>
+			<a href="apps/intervalo/vista.php">Intervalos</a><br>
+			<a href="apps/check/vista.php">Checklist</a>
+		</div>
+		<div style="top: 647px;left: 544px;" class="aplE2">
+			<a href="apps/rolpersona/vista.php">Asignar Roles a personas</a><br>
+			<a href="apps/rolinstitucion/vista.php">Asignar roles a instituciones</a><br>
+			<a href="apps/entregableespecifico/vista.php">Entregables especificos</a>
+		</div>
+		<div style="top: 647px;left: 725px;" class="aplE2">
+			<a href="apps/rol/Lista_rol.php">Roles</a><br>
+			<a href="apps/Insumos/vista.php">Insumos</a><br>
+		</div>
+<?php }?>
+
+</body>
+
+<script>
+	function Verifica(id_usuario, id_menu) {
+		var extra = 'nombreUsuario=<?php echo $nombreUsuario; ?>&idUsuario=<?php echo $idUsuario; ?>&perfil=<?php echo $tipoPerfil; ?>&tipoPerfil=<?php echo $tipoPerfil; ?>';
+		$.post("../WEB-INF/Controllers/Menu/Controler_menu.php", {
+				Accion: 'Consulta',
+				Id_usuario: id_usuario,
+				Id_menu: id_menu
+			},
+			(data, status) => {
+				if (status == "success") {
+					let obj = JSON.parse(data);
+					if (obj.ruta) {
+						url = obj.ruta + extra;
+						$(location).attr('href', url);
+					} else {
+						alert('No cuenta con los permisos necesarios');
+					}
+				}
+			});
+	}
+
+    //color: rgb(0, 0, 0);
+    //font-family: Muli-Bold;
+	function ejeColor(idEje, altura) {
+		var padre = $(window.parent.document);
+		var idEje = idEje;
+		var altura = altura;
+		//$(padre).find("p.nEje" + idEje).css("background-color", "#d3d3d3");
+	
+		$(padre).find(".franja").css("height", altura);
+		/*$(padre).find("p.ejeColor" + idEje).css({
+			"background-color": "#5d2852"
+		});*/
+		/*
+		if (idEje == 1) {
+			$(padre).find("p.nEje2,p.nEje3,p.nEje4,p.nEje5,p.nEje6,p.nEje7,p.nEje8,p.nEje9,p.nEje10,p.nEje11").css("background-color", "#4d4d57");
+			$(padre).find("p.ejeColor2,p.ejeColor3,p.ejeColor4,p.ejeColor5,p.ejeColor6,p.ejeColor7,p.ejeColor8,p.ejeColor9,p.ejeColor10,p.ejeColor11").css({
+				"background-color": "#a9a9ae"
+			});
+		}
+		if (idEje == 2) {
+			$(padre).find("p.nEje1,p.nEje3,p.nEje4,p.nEje5,p.nEje6,p.nEje7,p.nEje8,p.nEje9,p.nEje10,p.nEje11").css("background-color", "#4d4d57");
+			$(padre).find("p.ejeColor1,p.ejeColor3,p.ejeColor4,p.ejeColor5,p.ejeColor6,p.ejeColor7,p.ejeColor8,p.ejeColor9,p.ejeColor10,p.ejeColor11").css({
+				"background-color": "#a9a9ae"
+			});
+		}
+		if (idEje == 3) {
+			$(padre).find("p.nEje1,p.nEje2,p.nEje4,p.nEje5,p.nEje6,p.nEje7,p.nEje8,p.nEje9,p.nEje10,p.nEje11").css("background-color", "#4d4d57");
+			$(padre).find("p.ejeColor1,p.ejeColor2,p.ejeColor4,p.ejeColor5,p.ejeColor6,p.ejeColor7,p.ejeColor8,p.ejeColor9,p.ejeColor10,p.ejeColor11").css({
+				"background-color": "#a9a9ae"
+			});
+		}
+		if (idEje == 4) {
+			$(padre).find("p.nEje1,p.nEje2,p.nEje3,p.nEje5,p.nEje6,p.nEje7,p.nEje8,p.nEje9,p.nEje10,p.nEje11").css("background-color", "#4d4d57");
+			$(padre).find("p.ejeColor1,p.ejeColor2,p.ejeColor3,p.ejeColor5,p.ejeColor6,p.ejeColor7,p.ejeColor8,p.ejeColor9,p.ejeColor10,p.ejeColor11").css({
+				"background-color": "#a9a9ae"
+			});
+		}
+		if (idEje == 5) {
+			$(padre).find("p.nEje1,p.nEje2,p.nEje3,p.nEje4,p.nEje6,p.nEje7,p.nEje8,p.nEje9,p.nEje10,p.nEje11").css("background-color", "#4d4d57");
+			$(padre).find("p.ejeColor1,p.ejeColor2,p.ejeColor3,p.ejeColor4,p.ejeColor6,p.ejeColor7,p.ejeColor8,p.ejeColor9,p.ejeColor10,p.ejeColor11").css({
+				"background-color": "#a9a9ae"
+			});
+		}
+		if (idEje == 6) {
+			$(padre).find("p.nEje1,p.nEje2,p.nEje3,p.nEje4,p.nEje5,p.nEje7,p.nEje8,p.nEje9,p.nEje10,p.nEje11").css("background-color", "#4d4d57");
+			$(padre).find("p.ejeColor1,p.ejeColor2,p.ejeColor3,p.ejeColor4,p.ejeColor5,p.ejeColor7,p.ejeColor8,p.ejeColor9,p.ejeColor10,p.ejeColor11").css({
+				"background-color": "#a9a9ae"
+			});
+		}
+		if (idEje == 7) {
+			$(padre).find("p.nEje1,p.nEje2,p.nEje3,p.nEje4,p.nEje5,p.nEje6,p.nEje8,p.nEje9,p.nEje10,p.nEje11").css("background-color", "#4d4d57");
+			$(padre).find("p.ejeColor1,p.ejeColor2,p.ejeColor3,p.ejeColor4,p.ejeColor5,p.ejeColor6,p.ejeColor8,p.ejeColor9,p.ejeColor10,p.ejeColor11").css({
+				"background-color": "#a9a9ae"
+			});
+		}
+		if (idEje == 8) {
+			$(padre).find("p.nEje1,p.nEje2,p.nEje3,p.nEje4,p.nEje5,p.nEje6,p.nEje7,p.nEje9,p.nEje10,p.nEje11").css("background-color", "#4d4d57");
+			$(padre).find("p.ejeColor1,p.ejeColor2,p.ejeColor3,p.ejeColor4,p.ejeColor5,p.ejeColor6,p.ejeColor7,p.ejeColor9,p.ejeColor10,p.ejeColor11").css({
+				"background-color": "#a9a9ae"
+			});
+		}
+		if (idEje == 9) {
+			$(padre).find("p.nEje1,p.nEje2,p.nEje3,p.nEje4,p.nEje5,p.nEje6,p.nEje7,p.nEje8,p.nEje10,p.nEje11").css("background-color", "#4d4d57");
+			$(padre).find("p.ejeColor1,p.ejeColor2,p.ejeColor3,p.ejeColor4,p.ejeColor5,p.ejeColor6,p.ejeColor7,p.ejeColor8,p.ejeColor10,p.ejeColor11").css({
+				"background-color": "#a9a9ae"
+			});
+		}
+		if (idEje == 10) {
+			$(padre).find("p.nEje1,p.nEje2,p.nEje3,p.nEje4,p.nEje5,p.nEje6,p.nEje7,p.nEje8,p.nEje9,p.nEje11").css("background-color", "#4d4d57");
+			$(padre).find("p.ejeColor1,p.ejeColor2,p.ejeColor3,p.ejeColor4,p.ejeColor5,p.ejeColor6,p.ejeColor7,p.ejeColor8,p.ejeColor9,p.ejeColor11").css({
+				"background-color": "#a9a9ae"
+			});
+		}
+		if (idEje == 11) {
+			$(padre).find("p.nEje1,p.nEje2,p.nEje3,p.nEje4,p.nEje5,p.nEje6,p.nEje7,p.nEje8,p.nEje9,p.nEje10").css("background-color", "#4d4d57");
+			$(padre).find("p.ejeColor1,p.ejeColor2,p.ejeColor3,p.ejeColor4,p.ejeColor5,p.ejeColor6,p.ejeColor7,p.ejeColor8,p.ejeColor9,p.ejeColor10").css({
+				"background-color": "#a9a9ae"
+			});
+		}*/
+	}
+</script>
+
+</html>

@@ -1,0 +1,8 @@
+[18-Nov-2021 15:43:00 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/caomi8administro/public_html/pruebassie/sie/vista/apps/Asuntos/views/conversacion/conversacion.php:223
+Stack trace:
+#0 {main}
+  thrown in /home/caomi8administro/public_html/pruebassie/sie/vista/apps/Asuntos/views/conversacion/conversacion.php on line 223
+[18-Nov-2021 15:43:43 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/caomi8administro/public_html/pruebassie/sie/vista/apps/Asuntos/views/conversacion/entregables.php:5
+Stack trace:
+#0 {main}
+  thrown in /home/caomi8administro/public_html/pruebassie/sie/vista/apps/Asuntos/views/conversacion/entregables.php on line 5

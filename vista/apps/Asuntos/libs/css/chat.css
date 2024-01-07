@@ -1,0 +1,262 @@
+body,html{
+			/*height: 100%;*/
+			margin: 0;
+			/*background: #7F7FD5;
+	       background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+	        background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);*/
+		}
+
+.well2{
+	min-height: 20px;
+	font-family: 'Muli-SemiBold';
+	font-size: 11px;
+	padding: 8px;
+	margin-bottom: 0px;
+	background-color: #5a274f;
+	border: 1px solid #5a274f;
+	border-radius: 0px;
+	color: #fefefe;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+}
+	
+.wr{
+	background-color: #4d4d57;
+    border: 1px solid #4d4d57;
+    margin-top: 0px;
+    height: 30px;
+}
+.imgRegresar{
+	cursor: pointer;
+	width: 15px;
+	height: 15px;
+	top: 42px;
+    position: absolute;
+}
+
+		.chat{
+			/*margin-top: auto;*/
+			/*margin-bottom: auto;*/	
+				}
+		
+		
+		
+		.card-header{
+			border-bottom: 0 !important;
+			height: 102px !important;
+		}
+		.header-cnv{
+			/*border-bottom: 0 !important;
+			background-color: #464456 !important;*/
+		}
+	 	.card-footerP{
+			border-top: 0 !important;
+			background-color: #e9e7e6 !important;
+		}
+		.container{
+			align-content: center;
+		}
+		.search{
+			border-radius: 15px 0 0 15px !important;
+			background-color: rgba(0,0,0,0.3) !important;
+			border:0 !important;
+			color:white !important;
+		}
+		.search:focus{
+		    box-shadow:none !important;
+           	outline:0px !important;
+		}
+		
+		.attach_btn{
+	border-radius: 15px 0 0 15px !important;
+	background-color: rgba(0,0,0,0.3) !important;
+			border:0 !important;
+			color: white !important;
+			cursor: pointer;
+		}
+		.send_btn{
+			border-radius: 0 15px 15px 0 !important;
+			border:0 !important;
+			color: white !important;
+			cursor: pointer;
+		}
+		.search_btn{
+			border-radius: 0 15px 15px 0 !important;
+			background-color: rgba(0,0,0,0.3) !important;
+			border:0 !important;
+			color: white !important;
+			cursor: pointer;
+		}
+		.contacts{
+			list-style: none;
+			padding: 0;
+		}
+		.contacts li{
+			width: 100% !important;
+			padding: 5px;
+			margin-bottom: 5px !important;
+		}
+	/*.active{
+			background-color: rgba(0,0,0,0.3);
+	}*/
+		.user_img{
+			height: 30px;
+			width: 30px;
+			border:1.5px solid #f5f6fa;
+		
+		}
+		.user_img_msg{
+			height: 40px;
+			width: 40px;
+			border:1.5px solid #f5f6fa;
+		
+		}
+
+	.img_cont_msg{
+			height: 40px;
+			width: 40px;
+	}
+
+
+	.offline{
+		background-color: #A9A9A9 !important;
+	}
+	
+	.redOnline{
+		background-color: red !important;
+	}
+
+	.yellowOnline{
+		background-color: yellow !important;
+	}
+		
+	
+	.user_info2{
+		/*margin-top: auto;*/
+		margin-top: 0;
+		/*margin-left: 15px;*/
+		margin-left: 9px;
+		color :white;
+	}
+	
+	.user_info p{
+	font-size: 10px;
+	/*color: rgba(255,255,255,0.6);*/
+	}
+	.user_info2 p{
+	font-size: 10px;
+		color: white;
+		font-family: 'Muli-SemiBold';
+	}
+	.video_cam{
+		margin-left: 50px;
+		margin-top: 5px;
+	}
+	.video_cam span{
+		color: white;
+		font-size: 20px;
+		cursor: pointer;
+		margin-right: 20px;
+	}
+	
+	.msg_time{
+		position: absolute;
+		left: 0;
+		bottom: -15px;
+		color: rgba(255,255,255,0.5);
+		font-size: 10px;
+	}
+	.msg_time_send{
+		position: absolute;
+		right:0;
+		bottom: -15px;
+		color: rgba(255,255,255,0.5);
+		font-size: 10px;
+	}
+	.msg_head{
+		position: relative;
+	}
+	#action_menu_btn{
+		position: absolute;
+		right: 20px;
+		top: 80px;
+		color: white;
+		cursor: pointer;
+		font-size: 20px;
+	}
+	.action_menu {
+		z-index: 1;
+		position: absolute;
+		padding: 15px 0;
+		background-color: rgba(0,0,0,0.5);
+		color: white;
+		border-radius: 15px;
+		top: 30px;
+		right: 15px;
+		display: none;
+	}
+	.action_menu ul {
+		list-style: none;
+		padding: 0;
+	margin: 0;
+	}
+	.action_menu ul li {
+		width: 100%;
+		padding: 10px 15px;
+		margin-bottom: 5px;
+	}
+	.action_menu ul li i {
+		padding-right: 10px;
+	
+	}
+	.action_menu ul li:hover {
+		cursor: pointer;
+		background-color: rgba(0,0,0,0.2);
+	}
+	@media(max-width: 576px) {
+		.contacts_card{
+			margin-bottom: 15px !important;
+		}
+	}
+
+	
+	.sp {
+		height: 25px !important;
+		width: 20px !important;
+		display: grid !important;
+		align-content: center !important;
+		position: absolute !important;
+		top: :-5px !important;
+		left: 49px !important;
+	}
+
+	
+
+	.cajaI {
+		position: absolute;
+		top:200px;
+		left:0px;
+		width:100%;
+		height: 300px;
+		background-color: #464456;
+		z-index: 10;
+	}
+
+	.cajaEI {
+		/*position: absolute;
+		top:100px;
+		left:0px;
+		width:100%;
+		height: 300px;
+		background-color: #464456;
+		z-index: 10;*/
+	}
+
+	.btn-panel {
+		background-color: #585066;
+		color: white;
+		width: 80px;
+		height: 25px;
+		padding-top: 0px !important;
+	}
+

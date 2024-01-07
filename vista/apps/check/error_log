@@ -1,0 +1,5 @@
+[26-Sep-2022 09:44:19 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, string given in /home/caomi8administro/public_html/siekaluz.com/sie/vista/apps/check/Alta_check.php on line 552
+[26-Sep-2022 09:44:32 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, string given in /home/caomi8administro/public_html/siekaluz.com/sie/vista/apps/check/Alta_check.php on line 552
+[26-Sep-2022 09:44:49 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, string given in /home/caomi8administro/public_html/siekaluz.com/sie/vista/apps/check/Alta_check.php on line 552
+[27-Sep-2022 12:13:41 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, string given in /home/caomi8administro/public_html/siekaluz.com/sie/vista/apps/check/Alta_check.php on line 552
+[07-Feb-2023 15:55:13 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, string given in /home/caomi8administro/public_html/siekaluz.com/sie/vista/apps/check/Alta_check.php on line 552

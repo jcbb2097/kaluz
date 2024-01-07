@@ -1,0 +1,4 @@
+[18-Nov-2021 15:44:06 UTC] PHP Fatal error:  Uncaught Error: Using $this when not in object context in /home/caomi8administro/public_html/pruebassie/sie/vista/apps/Asuntos/views/recibidos/recibidos.php:659
+Stack trace:
+#0 {main}
+  thrown in /home/caomi8administro/public_html/pruebassie/sie/vista/apps/Asuntos/views/recibidos/recibidos.php on line 659

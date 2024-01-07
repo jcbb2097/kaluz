@@ -1,0 +1,187 @@
+<?php
+$id_eje = $_POST["id"];
+$tipo = $_POST["tipo"];
+$periodo = $_POST["periodo"];
+$categoria = $_POST["categoria"];
+$where_tipo = "";
+$where_ano = "";
+
+include_once('../../../WEB-INF/Classes/Catalogo.class.php');
+
+$catalogo = new Catalogo();
+if ($tipo != 1) {
+    $where_tipo = " AND d.id_tipo=" . $tipo;
+}
+if ($periodo != 'todos') {
+    $where_ano = " and d.anio=" . $periodo;
+}
+?>
+<html>
+
+<head>
+    <title>Museo del Palacio de Bellas Artes</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link rel="stylesheet" type="text/css" href="../../../resources/font/index.css" />
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/aplicaciones/estilos.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../../resources/css/Indicador_entregables.css" />
+    <style type="text/css">
+        a:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <table id="example" class="table table-principal">
+                    <thead class="table-header">
+                        <tr>
+                            <th>Área</th>
+                            <th>Actividad</th>
+                            <th>Nombre-entregable</th>
+                            <?php if ($tipo == 1) { ?>
+                                <th>Entregable preeliminar</th>
+                                <th>Entregable Proceso</th>
+                                <th>Entregable final</th>
+                            <?php } elseif ($tipo == 9) { ?>
+                                <th>Entregable preeliminar</th>
+                            <?php } elseif ($tipo == 10) { ?>
+                                <th>Entregable final</th>
+                            <?php } elseif ($tipo == 14) { ?>
+                                <th>Entregable Proceso</th>
+                            <?php  } ?>
+
+                        </tr>
+                    </thead>
+                    <tbody class="table-body " id="table_principal_body">
+                        <?php
+                        $consulta = "SELECT
+                        d.id_documento,d.descripcion,a.Nombre AS area,
+                        per.Periodo,t.tipo,d.id_tipo,d.pdf,d.ruta,
+                        CONCAT(ac.Numeracion,ac.Nombre) actividad
+                    FROM c_documento AS d
+                        INNER JOIN c_area AS a ON a.Id_Area = d.id_area
+                        INNER JOIN c_tipo_documento AS t ON t.id_tipo = d.id_tipo
+                        LEFT JOIN k_archivoactividad k_ar ON d.id_documento = k_ar.id_archivo
+                        LEFT JOIN c_exposicionTemporal expo ON k_ar.id_exposicion = expo.idExposicion
+                        LEFT JOIN c_periodo per ON d.anio = per.Id_Periodo
+                        LEFT JOIN c_actividad ac ON ac.IdActividad = k_ar.id_actividad WHERE d.id_tipo IN ( 9, 10, 14 ) AND k_ar.id_proyecto =" . $id_eje . " and d.IdCategoriadeEje=$categoria" . $where_tipo . $where_ano;
+                        $resultConsulta = $catalogo->obtenerLista($consulta);
+                        //echo $consulta;
+                        while ($row = mysqli_fetch_array($resultConsulta)) {
+                            if ($row['id_tipo'] == 9) $color_texto = "#dfa739";
+                            if ($row['id_tipo'] == 10) $color_texto = "#33ab15";
+                            if ($row['id_tipo'] == 14) $color_texto = "#dbd909";
+                            $ruta = '../../../resources/aplicaciones/imagenes/ArchivosCompartidos/' . $row['pdf'];
+                            echo '<tr>';
+
+                            echo '<td>' . $row['area'] . '</td>';
+                            echo '<td>' . $row['actividad'] . '</td>';
+                            echo '<td>' . $row['descripcion'] . '</td>';
+                            if ($tipo == 1) {
+                                if ($row['id_tipo'] == 9) {
+                                    if ($row['pdf'] == "link") { //si es un link a un archivo
+                                        echo '<td><a target="_blank" href="' . $row['ruta'] . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-link"></i></a></td>';
+                                    } else {
+                                        echo '<td><a target="_blank" href="' . $ruta . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-file"></i></a></td>';
+                                    }
+                                } else {
+                                    echo '<td></td>';
+                                }
+                                if ($row['id_tipo'] == 14) {
+                                    if ($row['pdf'] == "link") { //si es un link a un archivo
+                                        echo '<td><a target="_blank" href="' . $row['ruta'] . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-link"></i></a></td>';
+                                    } else {
+                                        echo '<td><a target="_blank" href="' . $ruta . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-file"></i></a></td>';
+                                    }
+                                } else {
+                                    echo '<td></td>';
+                                }
+                                if ($row['id_tipo'] == 10) {
+                                    if ($row['pdf'] == "link") { //si es un link a un archivo
+                                        echo '<td><a target="_blank" href="' . $row['ruta'] . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-link"></i></a></td>';
+                                    } else {
+                                        echo '<td><a target="_blank" href="' . $ruta . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-file"></i></a></td>';
+                                    }
+                                } else {
+                                    echo '<td></td>';
+                                }
+                            } elseif ($tipo == 9) {
+                                if ($row['id_tipo'] == 9 || $row['id_tipo'] == 10 || $row['id_tipo'] == 14) {
+                                    if ($row['pdf'] == "link") { //si es un link a un archivo
+                                        echo '<td><a target="_blank" href="' . $row['ruta'] . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-link"></i></a></td>';
+                                    } else {
+                                        echo '<td><a target="_blank" href="' . $ruta . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-file"></i></a></td>';
+                                    }
+                                } else {
+                                    echo '<td><a target="_blank" href="' . $ruta . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-file"></i></a></td>';
+                                }
+                            } elseif ($tipo == 10) {
+                                if ($row['id_tipo'] == 9 || $row['id_tipo'] == 10 || $row['id_tipo'] == 14) {
+                                    if ($row['pdf'] == "link") { //si es un link a un archivo
+                                        echo '<td><a target="_blank" href="' . $row['ruta'] . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-link"></i></a></td>';
+                                    } else {
+                                        echo '<td><a target="_blank" href="' . $ruta . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-file"></i></a></td>';
+                                    }
+                                } else {
+                                    echo '<td><a target="_blank" href="' . $ruta . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-file"></i></a></td>';
+                                }
+                            } elseif ($tipo == 14) {
+                                if ($row['id_tipo'] == 9 || $row['id_tipo'] == 10 || $row['id_tipo'] == 14) {
+                                    if ($row['pdf'] == "link") { //si es un link a un archivo
+                                        echo '<td><a target="_blank" href="' . $row['ruta'] . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-link"></i></a></td>';
+                                    } else {
+                                        echo '<td><a target="_blank" href="' . $ruta . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-file"></i></a></td>';
+                                    }
+                                } else {
+                                    echo '<td><a target="_blank" href="' . $ruta . '" style="text-decoration:none;color:' . $color_texto . ';">' . $row['tipo'] . '<i class="glyphicon glyphicon-file"></i></a></td>';
+                                }
+                            }
+                            echo '</tr>';
+                        }
+                        ?>
+                    </tbody>
+                    <tfoot class="table-header">
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                            <?php if ($tipo == 1) { ?>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            <?php } elseif ($tipo == 9) { ?>
+                                <th></th>
+                            <?php } elseif ($tipo == 10) { ?>
+                                <th></th>
+                            <?php } elseif ($tipo == 14) { ?>
+                                <th></th>
+                            <?php  } ?>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function() {
+
+        // DataTable
+        var table = $('#example').DataTable();
+        table.destroy();
+        table = $('#example').DataTable({
+            "language": {
+                "url": "https://cdn.datatables.net/plug-ins/1.10.20/i18n/Spanish.json",
+            }
+        });
+
+    });
+</script>
+
+</html>

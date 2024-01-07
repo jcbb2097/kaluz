@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	
+	<script src="../resources/js/funcionesPrincipal.js"></script>
+<style> 
+.ejpos1{
+	width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 68px;
+    left: 578px;
+	background-color: #a9a9ae;
+	cursor: pointer;
+}
+
+div.eje1{
+	width: 0px;
+    height: 1.5px;
+    background: #9f7b7e;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 89px;
+    left: 0px;
+}
+
+div.eje12{
+    width: 0px;
+    height: 0px;
+    background: #9f7b7e;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 582px;
+}
+
+div.eje123{
+	width: 0px;
+    height: 1px;
+    background: #d2d2d5;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 32px;
+    left: 0px;
+}
+
+
+
+div.eje1231{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 12px;
+}
+
+div.eje1232{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 213px;
+}
+
+div.eje1233{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 449px;
+}
+
+div.eje1234{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 786px;
+}
+
+div.eje1235{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 819px;
+}
+
+div.eje1236{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 887px;
+}
+
+.imgEje1{
+position: absolute;
+    left: -4px;
+    top: -15px;
+}
+
+.imgEje1a{
+position: absolute;
+    left: -4px;
+    top: -15px;
+}
+/********************************************************termina eje 1*****************************************************************************/
+
+.ejpos2{
+	width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 121px;
+    left: 9px;
+	background-color: #a9a9ae;
+	cursor: pointer;
+}
+
+div.eje2{
+    width: 0px;
+    height: 1.5px;
+    background: #9f7b7e;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 141px;
+    left: 0px;
+}
+
+div.eje22{
+    width: 0px;
+    height: 0px;
+    background: #9f7b7e;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 13px;
+}
+
+div.eje223{
+	width: 0px;
+    height: 1px;
+    background: #d2d2d5;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 32px;
+    left: 0px;
+}
+
+div.eje2231{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 114px;
+}
+
+div.eje2232{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 146px;
+}
+
+div.eje2233{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 213px;
+}
+
+div.eje2234{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 246px;
+}
+
+div.eje2235{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 549px;
+}
+
+div.eje2236{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 853px;
+}
+
+div.eje2237{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 887px;
+}
+
+.imgEje2{
+position: absolute;
+    left: -4px;
+    top: -15px;
+}
+
+.imgEje2a{
+position: absolute;
+    left: -4px;
+    top: -15px;
+}
+/********************************************************termina eje 2*****************************************************************************/
+.ejpos3{
+	width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 174px;
+    left: 445px;
+    background-color: #a9a9ae;
+    cursor: pointer;
+}
+
+div.eje3 {
+    width: 0px;
+    height: 1.5px;
+    background: #9f7b7e;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 194px;
+    left: 0px;
+}
+
+div.eje32{
+    width: 0px;
+    height: 0px;
+    background: #9f7b7e;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 449px;
+}
+
+div.eje323{
+	width: 0px;
+    height: 1px;
+    background: #d2d2d5;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 32px;
+    left: 0px;
+}
+
+div.eje3231{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 12px;
+}
+
+div.eje3232{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 213px;
+}
+
+div.eje3233{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 416px;
+}
+
+div.eje3234{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 583px;
+}
+
+.imgEje3{
+position: absolute;
+    left: -4px;
+    top: -15px;
+}
+
+.imgEje3a{
+position: absolute;
+    left: -4px;
+    top: -15px;
+}
+/********************************************************termina eje 3*****************************************************************************/
+
+.ejpos4{
+	width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 227px;
+    left: 578px;
+    background-color: #a9a9ae;
+    cursor: pointer;
+}
+
+div.eje4 {
+    width: 0px;
+    height: 1.5px;
+    background: #9f7b7e;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 247px;
+    left: 0px;
+}
+
+div.eje42{
+    width: 0px;
+    height: 0px;
+    background: #9f7b7e;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 582px;
+}
+
+div.eje423{
+	width: 0px;
+    height: 1px;
+    background: #d2d2d5;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 32px;
+    left: 0px;
+}
+
+div.eje4231{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 12px;
+}
+
+div.eje4232{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 146px;
+}
+
+div.eje4233{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 213px;
+}
+
+div.eje4234{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 618px;
+}
+
+div.eje4235{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 651px;
+}
+
+div.eje4236{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 684px;
+}
+
+div.eje4237{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 717px;
+}
+
+.imgEje4{
+position: absolute;
+    left: -4px;
+    top: -15px;
+}
+
+.imgEje4a{
+position: absolute;
+    left: -4px;
+    top: -15px;
+}
+/********************************************************termina eje 4*****************************************************************************/
+.ejpos5{
+	width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 280px;
+    left: 850px;
+    background-color: #a9a9ae;
+    cursor: pointer;
+}
+
+div.eje5 {
+    width: 0px;
+    height: 1.5px;
+    background: #9f7b7e;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 300px;
+    left: 0px;
+}
+
+div.eje52{
+    width: 0px;
+    height: 0px;
+    background: #9f7b7e;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 854px;
+}
+
+div.eje523{
+	width: 0px;
+    height: 1px;
+    background: #d2d2d5;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 32px;
+    left: 0px;
+}
+
+div.eje5231{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 12px;
+}
+
+div.eje5232{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 45px;
+}
+
+div.eje5233{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 78px;
+}
+
+div.eje5234{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 213px;
+}
+
+div.eje5235{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 583px;
+}
+
+div.eje5236{
+	width: 1px;
+    height: 0px;
+    background: #d2d2d5;
+    transition: height 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 16px;
+    left: 887px;
+}
+
+
+.imgEje5{
+position: absolute;
+    left: -4px;
+    top: -15px;
+}
+
+.imgEje5a{
+position: absolute;
+    left: -4px;
+    top: -15px;
+}
+/********************************************************termina eje 5*****************************************************************************/
+.ejpos6{
+	width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 333px;
+    left: 546px;
+    background-color: #a9a9ae;
+    cursor: pointer;
+}
+
+div.eje6 {
+    width: 546px;
+    height: 1.5px;
+    background: #9f7b7e;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 353px;
+    left: 0px;
+}
+/********************************************************termina eje 6*****************************************************************************/
+.ejpos7{
+	width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 386px;
+    left: 276px;
+    background-color: #a9a9ae;
+    cursor: pointer;
+}
+
+div.eje7 {
+    width: 276px;
+    height: 1.5px;
+    background: #9f7b7e;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 406px;
+    left: 0px;
+}
+/********************************************************termina eje 7*****************************************************************************/
+.ejpos8{
+	width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 439px;
+    left: 345px;
+    background-color: #a9a9ae;
+    cursor: pointer;
+}
+
+div.eje8 {
+    width: 345px;
+    height: 1.5px;
+    background: #9f7b7e;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 459px;
+    left: 0px;
+}
+/********************************************************termina eje 8*****************************************************************************/
+
+.ejpos9{
+	width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 492px;
+    left: 378px;
+    background-color: #a9a9ae;
+    cursor: pointer;
+}
+
+div.eje9 {
+    width: 378px;
+    height: 1.5px;
+    background: #9f7b7e;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 512px;
+    left: 0px;
+}
+/********************************************************termina eje 9*****************************************************************************/
+.ejpos10{
+	width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 545px;
+    left: 513px;
+    background-color: #a9a9ae;
+    cursor: pointer;
+}
+
+div.eje10 {
+    width: 513px;
+    height: 1.5px;
+    background: #9f7b7e;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 565px;
+    left: 0px;
+}
+/********************************************************termina eje 10*****************************************************************************/
+.ejpos11{
+	width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 599px;
+    left: 210px;
+    background-color: #a9a9ae;
+    cursor: pointer;
+}
+
+div.eje11 {
+    width: 210px;
+    height: 1.5px;
+    background: #9f7b7e;
+    transition: width 1s;
+    transition-timing-function: linear;
+    position: absolute;
+    top: 619px;
+    left: 0px;
+}
+/********************************************************termina eje 11*****************************************************************************/
+
+
+</style>
+</head>
+<body>
+<p class="ejpos1"></p>
+<div class="eje1"></div>
+<div class="eje12"><img hidden class="imgEje1" src="../resources/img/flechaB.png"></div>
+<div class="eje123"></div>
+<div class="eje1231"><img hidden class="imgEje1a" src="../resources/img/flechaA.png"></div>
+<div class="eje1232"><img hidden class="imgEje1a" src="../resources/img/flechaA.png"></div>
+<div class="eje1233"><img hidden class="imgEje1a" src="../resources/img/flechaA.png"></div>
+<div class="eje1234"><img hidden class="imgEje1a" src="../resources/img/flechaA.png"></div>
+<div class="eje1235"><img hidden class="imgEje1a" src="../resources/img/flechaA.png"></div>
+<div class="eje1236"><img hidden class="imgEje1a" src="../resources/img/flechaA.png"></div>
+
+<p class="ejpos2"></p>
+<div class="eje2"></div>
+<div class="eje22"><img hidden class="imgEje2" src="../resources/img/flechaB.png"></div>
+<div class="eje223"></div>
+<div class="eje2231"><img hidden class="imgEje2a" src="../resources/img/flechaA.png"></div>
+<div class="eje2232"><img hidden class="imgEje2a" src="../resources/img/flechaA.png"></div>
+<div class="eje2233"><img hidden class="imgEje2a" src="../resources/img/flechaA.png"></div>
+<div class="eje2234"><img hidden class="imgEje2a" src="../resources/img/flechaA.png"></div>
+<div class="eje2235"><img hidden class="imgEje2a" src="../resources/img/flechaA.png"></div>
+<div class="eje2236"><img hidden class="imgEje2a" src="../resources/img/flechaA.png"></div>
+<div class="eje2237"><img hidden class="imgEje2a" src="../resources/img/flechaA.png"></div>
+
+<p class="ejpos3"></p>
+<div class="eje3"></div>
+<div class="eje32"><img hidden class="imgEje3" src="../resources/img/flechaB.png"></div>
+<div class="eje323"></div>
+<div class="eje3231"><img hidden class="imgEje3a" src="../resources/img/flechaA.png"></div>
+<div class="eje3232"><img hidden class="imgEje3a" src="../resources/img/flechaA.png"></div>
+<div class="eje3233"><img hidden class="imgEje3a" src="../resources/img/flechaA.png"></div>
+<div class="eje3234"><img hidden class="imgEje3a" src="../resources/img/flechaA.png"></div>
+
+
+<p class="ejpos4"></p>
+<div class="eje4"></div>
+<div class="eje42"><img hidden class="imgEje4" src="../resources/img/flechaB.png"></div>
+<div class="eje423"></div>
+<div class="eje4231"><img hidden class="imgEje4a" src="../resources/img/flechaA.png"></div>
+<div class="eje4232"><img hidden class="imgEje4a" src="../resources/img/flechaA.png"></div>
+<div class="eje4233"><img hidden class="imgEje4a" src="../resources/img/flechaA.png"></div>
+<div class="eje4234"><img hidden class="imgEje4a" src="../resources/img/flechaA.png"></div>
+<div class="eje4235"><img hidden class="imgEje4a" src="../resources/img/flechaA.png"></div>
+<div class="eje4236"><img hidden class="imgEje4a" src="../resources/img/flechaA.png"></div>
+<div class="eje4237"><img hidden class="imgEje4a" src="../resources/img/flechaA.png"></div>
+
+<p class="ejpos5"></p>
+<div class="eje5"></div>
+<div class="eje52"><img hidden class="imgEje5" src="../resources/img/flechaB.png"></div>
+<div class="eje523"></div>
+<div class="eje5231"><img hidden class="imgEje5a" src="../resources/img/flechaA.png"></div>
+<div class="eje5232"><img hidden class="imgEje5a" src="../resources/img/flechaA.png"></div>
+<div class="eje5233"><img hidden class="imgEje5a" src="../resources/img/flechaA.png"></div>
+<div class="eje5234"><img hidden class="imgEje5a" src="../resources/img/flechaA.png"></div>
+<div class="eje5235"><img hidden class="imgEje5a" src="../resources/img/flechaA.png"></div>
+<div class="eje5236"><img hidden class="imgEje5a" src="../resources/img/flechaA.png"></div>
+
+<p class="ejpos6"></p>
+<div class="eje6"></div>
+
+<p class="ejpos7"></p>
+<div class="eje7"></div>
+
+<p class="ejpos8"></p>
+<div class="eje8"></div>
+
+<p class="ejpos9"></p>
+<div class="eje9"></div>
+
+<p class="ejpos10"></p>
+<div class="eje10"></div>
+
+<p class="ejpos11"></p>
+<div class="eje11"></div>
+</body>
+<script>
+/*$('.ejpos1').hover(function(){
+  $('.eje1').css({
+    "width": "800px", //O lo que desees
+    
+  });
+});*/
+
+$(document).ready(function(){
+ 
+  $("p.ejpos1").hover(function()
+  {
+	$(".ejpos1").css("background-color", "#4d4d57");
+	$(".eje1").css("width", "578px");
+	
+	$(".eje12").css("width", "1.5px");
+	$(".eje12").css("height", "68px");
+	
+	setTimeout(function() {
+  //your code to be executed after 1 second
+  $(".eje123").css("width", "905px");
+	}, 1000);
+	//$(".eje123").css("width", "905px");
+	
+	
+	$(".eje1231").css("height", "16px");
+	$(".eje1232").css("height", "16px");
+	$(".eje1233").css("height", "16px");
+	$(".eje1234").css("height", "16px");
+	$(".eje1235").css("height", "16px");
+	$(".eje1236").css("height", "16px");
+	
+	$(".imgEje1").show(700);
+	$(".imgEje1a").show(2500);
+  }, function(){
+    /*$(".eje1").css("width", "0px");
+	$(".ejpos1").css("background-color", "#a9a9ae");
+	$(".eje12").css("width", "0px");
+	$(".eje12").css("height", "0px");
+	$(".imgEje1").attr("hidden",true);
+	
+	$(".eje123").css("width", "0px");
+	$(".eje1231").css("height", "0px");
+	$(".eje1232").css("height", "0px");
+	$(".eje1233").css("height", "0px");
+	$(".eje1234").css("height", "0px");
+	$(".eje1235").css("height", "0px");
+	$(".eje1236").css("height", "0px");
+	$(".imgEje1").hide();*/
+  });
+  
+  
+  
+  
+  $("p.ejpos2").hover(function()
+  {
+	$(".ejpos2").css("background-color", "#4d4d57");
+	$(".eje2").css("width", "9px");
+	
+	$(".eje22").css("width", "1.5px");
+	$(".eje22").css("height", "121px");
+	
+	setTimeout(function() {
+		$(".eje223").css("width", "905px");
+	},1000);
+	
+	
+	
+	$(".eje2231").css("height", "16px");
+	$(".eje2232").css("height", "16px");
+	$(".eje2233").css("height", "16px");
+	$(".eje2234").css("height", "16px");
+	$(".eje2235").css("height", "16px");
+	$(".eje2236").css("height", "16px");
+	$(".eje2237").css("height", "16px")
+	
+	$(".imgEje2").show(700);
+	$(".imgEje2a").show(2500); 
+  }, function(){
+    /*$(".eje1").css("width", "0px");
+	$(".ejpos1").css("background-color", "#a9a9ae");
+	$(".eje12").css("width", "0px");
+	$(".eje12").css("height", "0px");
+	$(".imgEje1").attr("hidden",true);
+	
+	$(".eje123").css("width", "0px");
+	$(".eje1231").css("height", "0px");
+	$(".eje1232").css("height", "0px");
+	$(".eje1233").css("height", "0px");
+	$(".eje1234").css("height", "0px");
+	$(".eje1235").css("height", "0px");
+	$(".eje1236").css("height", "0px");
+	$(".imgEje1").hide();*/
+  });
+   
+   
+   
+   
+ $("p.ejpos3").hover(function()
+  {
+	$(".ejpos3").css("background-color", "#4d4d57");
+	$(".eje3").css("width", "445px");
+	
+	$(".eje32").css("width", "1.5px");
+	$(".eje32").css("height", "174px");
+	
+	setTimeout(function() {
+		$(".eje323").css("width", "905px");
+	},1000);
+	
+	
+	
+	$(".eje3231").css("height", "16px");
+	$(".eje3232").css("height", "16px");
+	$(".eje3233").css("height", "16px");
+	$(".eje3234").css("height", "16px");
+
+	$(".imgEje3").show(700);
+	$(".imgEje3a").show(2500); 
+  }, function(){
+    /*$(".eje1").css("width", "0px");
+	$(".ejpos1").css("background-color", "#a9a9ae");
+	$(".eje12").css("width", "0px");
+	$(".eje12").css("height", "0px");
+	$(".imgEje1").attr("hidden",true);
+	
+	$(".eje123").css("width", "0px");
+	$(".eje1231").css("height", "0px");
+	$(".eje1232").css("height", "0px");
+	$(".eje1233").css("height", "0px");
+	$(".eje1234").css("height", "0px");
+	$(".eje1235").css("height", "0px");
+	$(".eje1236").css("height", "0px");
+	$(".imgEje1").hide();*/
+  });
+  
+  
+  
+  $("p.ejpos4").hover(function()
+  {
+	$(".ejpos4").css("background-color", "#4d4d57");
+	$(".eje4").css("width", "578px");
+	
+	$(".eje42").css("width", "1.5px");
+	$(".eje42").css("height", "227px");
+	
+	setTimeout(function() {
+		$(".eje423").css("width", "905px");
+	},1000);
+	
+	
+	
+	$(".eje4231").css("height", "16px");
+	$(".eje4232").css("height", "16px");
+	$(".eje4233").css("height", "16px");
+	$(".eje4234").css("height", "16px");
+	$(".eje4235").css("height", "16px");
+	$(".eje4236").css("height", "16px");
+	$(".eje4237").css("height", "16px");
+	
+	$(".imgEje4").show(700);
+	$(".imgEje4a").show(2500); 
+  }, function(){
+    /*$(".eje1").css("width", "0px");
+	$(".ejpos1").css("background-color", "#a9a9ae");
+	$(".eje12").css("width", "0px");
+	$(".eje12").css("height", "0px");
+	$(".imgEje1").attr("hidden",true);
+	
+	$(".eje123").css("width", "0px");
+	$(".eje1231").css("height", "0px");
+	$(".eje1232").css("height", "0px");
+	$(".eje1233").css("height", "0px");
+	$(".eje1234").css("height", "0px");
+	$(".eje1235").css("height", "0px");
+	$(".eje1236").css("height", "0px");
+	$(".imgEje1").hide();*/
+  });
+  
+  
+  
+  $("p.ejpos5").hover(function()
+  {
+	$(".ejpos5").css("background-color", "#4d4d57");
+	$(".eje5").css("width", "850px");
+	
+	$(".eje52").css("width", "1.5px");
+	$(".eje52").css("height", "280px");
+	
+	setTimeout(function() {
+		$(".eje523").css("width", "905px");
+	},1000);
+	
+	
+	
+	$(".eje5231").css("height", "16px");
+	$(".eje5232").css("height", "16px");
+	$(".eje5233").css("height", "16px");
+	$(".eje5234").css("height", "16px");
+	$(".eje5235").css("height", "16px");
+	$(".eje5236").css("height", "16px");
+	
+	$(".imgEje5").show(700);
+	$(".imgEje5a").show(2500); 
+  }, function(){
+    /*$(".eje1").css("width", "0px");
+	$(".ejpos1").css("background-color", "#a9a9ae");
+	$(".eje12").css("width", "0px");
+	$(".eje12").css("height", "0px");
+	$(".imgEje1").attr("hidden",true);
+	
+	$(".eje123").css("width", "0px");
+	$(".eje1231").css("height", "0px");
+	$(".eje1232").css("height", "0px");
+	$(".eje1233").css("height", "0px");
+	$(".eje1234").css("height", "0px");
+	$(".eje1235").css("height", "0px");
+	$(".eje1236").css("height", "0px");
+	$(".imgEje1").hide();*/
+  });
+   
+   
+});
+</script>
+</html>

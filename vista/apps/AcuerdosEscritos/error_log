@@ -1,0 +1,7 @@
+[20-Feb-2023 00:33:53 America/Mexico_City] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, string given in /home/caomi8administro/public_html/siekaluz.com/sie/vista/apps/AcuerdosEscritos/Alta_acuerdo.php on line 896
+[20-Feb-2023 00:38:24 America/Mexico_City] PHP Notice:  Undefined variable: numeroAcuerdos in /home/caomi8administro/public_html/siekaluz.com/sie/vista/apps/AcuerdosEscritos/Vista.php on line 317
+[20-Feb-2023 00:38:24 America/Mexico_City] PHP Notice:  Undefined variable: numeroAcuerdos in /home/caomi8administro/public_html/siekaluz.com/sie/vista/apps/AcuerdosEscritos/Vista.php on line 318
+[20-Feb-2023 00:38:24 America/Mexico_City] PHP Notice:  Undefined variable: numeroAcuerdos in /home/caomi8administro/public_html/siekaluz.com/sie/vista/apps/AcuerdosEscritos/Vista.php on line 319
+[20-Feb-2023 00:38:24 America/Mexico_City] PHP Notice:  Undefined variable: numeroAcuerdos in /home/caomi8administro/public_html/siekaluz.com/sie/vista/apps/AcuerdosEscritos/Vista.php on line 320
+[20-Feb-2023 00:38:24 America/Mexico_City] PHP Notice:  Undefined variable: numeroAcuerdos in /home/caomi8administro/public_html/siekaluz.com/sie/vista/apps/AcuerdosEscritos/Vista.php on line 321
+[20-Feb-2023 00:38:24 America/Mexico_City] PHP Notice:  Undefined variable: numeroAcuerdos in /home/caomi8administro/public_html/siekaluz.com/sie/vista/apps/AcuerdosEscritos/Vista.php on line 322

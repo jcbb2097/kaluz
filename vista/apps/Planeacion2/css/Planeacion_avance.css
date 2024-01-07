@@ -1,0 +1,155 @@
+
+.well23 {
+    min-height: 20px;
+    font-family: 'Muli-SemiBold';
+    font-size: 11px;
+    padding: 8px;
+    background-color: #5a274f;
+    border: 1px solid #5a274f;
+    border-radius: 0px;
+    color: #fefefe;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .05);
+}
+
+.form-horizontal {
+    margin-left: 10px;
+    background-color: #cecece;
+    padding: 10px;
+    width: 867px;
+    border-radius: 10px;
+}
+
+
+table.check td,
+table.check th {
+    /*border: none;*/
+    font-family: 'Muli', sans-serif;
+    /*padding: 0.2rem;*/
+    /* white-space: nowrap; */
+    word-break: keep-all;
+    border: 1px solid #ddd;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+table.check th.check {
+    font-size: 10px;
+    color: #ffffff;
+    background-color: #5a274f;
+    min-height: 20px;
+    /*max-width: 80px;*/
+    border: none;
+    text-align: left;
+}
+
+
+.nc1 {
+    min-width: 30px !important;
+    max-width: 30px !important;
+}
+
+.nc2 {
+    min-width: 280px !important;
+    max-width: 280px !important;
+}
+.numcheck {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 438px !important;
+    max-width: 438px !important;
+}
+
+.nc3 {
+    min-width: 60px !important;
+    max-width: 60px !important;
+}
+
+.nc4 {
+    min-width: 46px !important;
+    max-width: 46px !important;
+}
+
+.nc5 {
+    min-width: 45px !important;
+    max-width: 45px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.nc6 {
+    min-width: 45px !important;
+    max-width: 45px !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.A1 {
+    min-width: 30px !important;
+    max-width: 30px !important;
+}
+
+.A2 {
+    min-width: 100px !important;
+    max-width: 100px !important;
+}
+
+.A3 {
+    min-width: 60px !important;
+    max-width: 60px !important;
+}
+
+.A5 {
+    min-width: 55px !important;
+    max-width: 55px !important;
+}
+.A6 {
+    min-width: 36px !important;
+    max-width: 36px !important;
+}
+.A7 {
+    min-width: 25px !important;
+    max-width: 25px !important;
+}
+
+
+.active {
+    background-color: whitesmoke;
+}
+
+.desactive {
+    background-color: grey;
+}
+
+.insumo {
+    display: none;
+}
+
+span:hover {
+    cursor: pointer;
+}
+.narrow {
+    padding: 5px;
+    /* border: 1px solid; */
+    /* width: 400px; */
+    margin: 0 auto;
+    font-size: 11px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    color: blue;
+  }
+
+  .normal {
+    word-break: normal;
+  }
+
+  .breakAll {
+    word-break: break-all;
+  }
+
+  .keepAll {
+    word-break: keep-all;
+  }
+
+  .breakWord {
+    word-break: break-word;
+  }

@@ -1,0 +1,28 @@
+.tooltip2 {
+    position: relative;
+    display: inline-block;
+}
+.tooltip2 .tooltiptext2 {
+visibility: hidden;
+width: 68px;
+background-color: transparent;
+color: #000000;
+text-align: center;
+border-radius: 0px;
+padding: 1px 0;
+position: absolute;
+z-index: 1;
+top: -12px;
+left: -2px;
+font-family: 'Muli-Regular';
+font-size: 9px;
+}
+.tooltip2 .tooltiptext2::after {
+content: "";
+position: absolute;
+border-width: 0px;
+border-style: solid;
+}
+.tooltip2:hover .tooltiptext2 {
+visibility: visible;
+}
